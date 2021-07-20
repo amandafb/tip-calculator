@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Tip Calculator App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main>
+        <h1>Tip Calculator App</h1>
+        <div class="container">
+            <div class="info">
+                <div class="bill_input">
+                    <label for="bill">Bill</label>
+                    <input type="number" name="bill" id="bill" placeholder="0.00" min="1" onblur="validBill(), btnActive()">
+                    <span id="validBill">The bill must be greater than zero!</span>
+                </div>
+                <div class="number_people">
+                    <label for="people">Number of People</label>
+                    <input type="number" name="people" id="people" placeholder="0" onkeyup="calcTip()" onblur="validPeople(), btnActive()">
+                    <span id="validPeople">The number must be greater than zero!</span>
+                </div>
+                <div class="tip_select">
+                    <p>Selec Tip %</p>
+                    <div class="tip_btn">
+                        <button id="btn_5" class="tip_btn_click" value="5">5%</button>
+                        <button id="btn_10" class="tip_btn_click" value="10" onclick="tipClick(this.value)">10%</button>
+                        <button id="btn_15" class="tip_btn_click" value="15" onclick="tipClick(this.value)">15%</button>
+                        <button id="btn_25" class="tip_btn_click" value="25" onclick="tipClick(this.value)">25%</button>
+                        <button id="btn_50" class="tip_btn_click" value="50" onclick="tipClick(this.value)">50%</button>
+                        <button id="btn_50" class="tip_btn_click" value="0" onclick="tipClick(this.value)">None</button>
+                    </div>
+                </div>
+              
+            </div>
+            <div class="results">
+                <div class="result_tip">
+                    <p class="result_label">Tip Amount <br><span>/ person</span></p>
+                    <span class="result_cash" id="valTip">$0.00</span>
+                </div>
+                <div class="result_tip">
+                    <p class="result_label">Total <br><span>/ person</span></p>
+                    <span class="result_cash" id="tipPerson">$0.00</span>
+                </div>
+                <div class="result_btn">
+                    <button id="reset" onclick="reset()">Reset</button>
+                </div> 
+            </div>
+        </div>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

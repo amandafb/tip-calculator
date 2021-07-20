@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Space Mono', monospace;;
+}
+/* cores */
+:root {
+    --primary: hsl(172, 67%, 45%);
+    --primaryDark: hsl(183, 100%, 15%);
+    --primaryDarken:hsl(186, 14%, 43%);
+    --primaryMedium:hsl(184, 14%, 56%);
+    --primaryLighten: hsl(185, 41%, 84%);
+    --primaryLight: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body{
+    background-color: var(--primaryLighten);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: var(--primaryDark);
+    letter-spacing: 10px;
+    font-size: 3rem
+}
+
+.container{
+    width: 60%;
+    height: 70vh;
+    background-color: var(--primaryLight);
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+}
+
+.info{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-right: 5%;
+}
+
+.bill_input{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.number_people{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.bill_input input, .number_people input{
+    height: 40px;
+    width: 100%;
+    position: relative;
+    text-align: right;
+    color: var(--primaryDark);
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding-right: 10px;
+}
+
+.bill_input::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0px;
+    width: 15px;
+    background: url("../images/icon-dollar.svg") center / contain no-repeat;
+    z-index: 2;
+  }
+
+.number_people::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0px;
+    width: 15px;
+    background: url("../images/icon-person.svg") center / contain no-repeat;
+    z-index: 2;
+  }
+
+.tip_select{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tip_select button {
+    width: 30%;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: var(--white);
+    font-weight: 700;
+    background-color: var(--primaryDark);
+    border: none;
+    border-radius: 4px;
+}
+
+.tip_select button:hover{
+    background-color: var(--primary);
+    color: var(--primaryDark);
+}
+
+.tip_btn input{
+    width: 30%;
+    height: 50px;
+    text-align: right;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: var(--white);
+    font-weight: 700;
+    background-color: var(--primaryDark);
+    border: none;
+    border-radius: 4px;
+}
+
+.tip_btn_click:disabled{
+    background-color: var(--primaryMedium);
+}
+#validBill, #validPeople{
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+}
+
+.results{
+    background-color: var(--primaryDark);
+    width: 48%;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.result_tip{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 25%;
+}
+
+.result_cash{
+    color: var(--primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.result_label{
+    color: var(--white);
+}
+
+.result_label span{
+    color: var(--primaryMedium);
+}
+
+.result_btn{
+    position: relative;
+    top: 110px;
+}
+
+.result_btn button{
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: var(--primaryDark);
+    background-color: var(--primary);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: 0.4s;
+    border-radius: 5px;
+}
+
+.result_btn button:hover{
+   background-color: var(--primaryLighten);
+
+}
+
+/* medias */
+@media (min-width: 280px) and (max-width: 374px) {
+    h1{
+        font-size: 2rem;
+    }
+    .container{
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+    .info, .results{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .bill_input::before {
+        bottom: 15px;
+        width: 10px;
+      }
+    .number_people::before {
+        bottom: 15px;
+        width: 10px;
+      }
+      .result_btn{
+          top: 30px;
+          width: 50%;
+          margin: 0 auto 50px;
+      }
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+    h1{
+        font-size: 2rem;
+    }
+    .container{
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+    .info, .results{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .bill_input::before {
+        bottom: 0px;
+        width: 10px;
+      }
+    .number_people::before {
+        bottom: 0px;
+        width: 10px;
+      }
+}
